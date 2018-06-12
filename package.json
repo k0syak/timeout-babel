@@ -4,7 +4,7 @@
   "description": "",
   "main": "timeout.js",
   "scripts": {
-    "test": "mocha --compilers js:babel-core/register ./test/**/*.test.js",
+    "test": "cross-env NODE_ENV=test  mocha --require babel-core/register ./test/**/*.test.js",
     "predev": "rimraf dist .cache",
     "dev": "parcel index.html"
   },
@@ -12,7 +12,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "babel-runtime": "^6.26.0"
+    "babel-runtime": "^6.26.0",
+    "cross-env": "^5.1.6"
   },
   "devDependencies": {
     "babel-plugin-transform-runtime": "^6.23.0",
